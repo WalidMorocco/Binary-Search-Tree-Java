@@ -52,4 +52,23 @@ public class IntBST {
 		}
 		return null;
 	}
+	
+	public void breadthFirst() {
+		IntBSTNode p = root;
+		Queue queue = new Queue();
+		
+		if(p != null) {
+			queue.enqueue(p);
+			while(!queue.isEmptyy()) {
+				p = (IntBSTNode) queue.dequeue();
+				visit(p);
+				if (p.left != null) {
+					queue.enqueue(p.left);
+				}
+				if (p.right != null) {
+					queue.enqueue(p.right);
+				}
+			}
+		}
+	}
 }
