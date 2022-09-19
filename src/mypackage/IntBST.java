@@ -71,4 +71,14 @@ public class IntBST {
 			}
 		}
 	}
+	
+	protected void inorder(IntBSTNode p) {
+		if (p != null) {
+			inorder(p.left);
+			visit(p);
+			inorder(p.right);
+		}
+	}
+	
+	
 }

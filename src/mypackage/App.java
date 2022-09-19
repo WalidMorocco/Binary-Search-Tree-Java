@@ -15,7 +15,9 @@ public class App {
 		mytree.insert(31);
 		mytree.insert(29);
 		
-		mytree.breadthFirst();
+		mytree.inorder(mytree.root);
+		
+//		mytree.breadthFirst();
 		
 //		System.out.println(mytree.search(mytree.root, 12).key);
 	}
