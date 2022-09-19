@@ -15,11 +15,15 @@ public class App {
 		mytree.insert(31);
 		mytree.insert(29);
 		
-		mytree.inorder(mytree.root);
+//		System.out.println(mytree.search(mytree.root, 12).key);
 		
 //		mytree.breadthFirst();
 		
-//		System.out.println(mytree.search(mytree.root, 12).key);
+		System.out.println("Tree's inorder before deleting node 31.");
+		mytree.inorder(mytree.root);
+		mytree.deleteByMerging(31);
+		System.out.println("\nTree's inorder after deleting node 31.");
+		mytree.inorder(mytree.root);
 	}
 
 }

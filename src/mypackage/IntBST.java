@@ -80,5 +80,51 @@ public class IntBST {
 		}
 	}
 	
-	
+	public void deleteByMerging (int el) {
+		IntBSTNode tmp, node, p = root, prev = null;
+		
+		while (p != null && p.key != el) {
+			prev = p;
+			if (p.key < el) {
+				p = p.right;
+			}
+			else {
+				p = p.left;
+			}
+		}
+		
+		node = p;
+		
+		if (p != null && p.key == el) {
+			if (node.right == null) {
+				node = node.left;
+			}
+			else if (node.left == null) {
+				node = node.right;
+			}
+			else {
+				tmp = node.left;
+				while (tmp.right != null) {
+					tmp = tmp.right;
+				}
+				tmp.right = node.right;
+				node = node.left;
+			}
+			if ( p == root) {
+				root = node;
+			}
+			else if (prev.left == p) {
+				prev.left = node;
+			}
+			else {
+				prev.right = node;
+			}
+		}
+		else if (root != null) {
+			System.out.println("key " + el + " is not in the tree");
+		}
+		else {
+			System.out.println("The tree is empty.");
+		}
+	}
 }
